@@ -1,0 +1,165 @@
+body {
+  color: var(--021051);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  padding: 0px 0px 0px 0px !important;
+  &.hide-scrollbar {
+    margin: 0px 0px 0px 0px !important;
+  }
+  .lock & {
+    overflow: hidden;
+  }
+  .popup-show & {
+    overflow: hidden;
+  }
+  .menu-open & {
+    overflow: hidden;
+  }
+}
+
+body.noscroll {
+  overflow: hidden;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+fieldset,
+fieldset legend {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  outline: none;
+  color: currentcolor;
+}
+
+.btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 63%;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #5aa1fd;
+  border-radius: 30px;
+  min-height: 50px;
+  width: fit-content;
+  padding: 10px 23px;
+  overflow: hidden;
+  isolation: isolate;
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.15);
+  background: linear-gradient(177.14deg, #38e6f2 3%, #489eff 98.25%);
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+  transition:
+    background-position 0.5s ease,
+    transform 0.25s ease,
+    box-shadow 0.35s ease,
+    border-color 0.3s ease;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 60%;
+    height: 100%;
+    border-radius: 30px;
+    background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.55) 50%, transparent 100%);
+    transform: skewX(-25deg);
+    transition: left 0.6s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+  span {
+    position: relative;
+    z-index: 2;
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      background-position: 100% 100%;
+      &::before {
+        left: 130%;
+      }
+    }
+  }
+}
+
+.link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 111%;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  transition: border-bottom 0.3s;
+  @media (any-hover: hover) {
+    &:hover {
+      border-bottom: 1px solid transparent;
+    }
+  }
+  @media (max-width: 550px) {
+    margin-left: 25px;
+    padding: 0px 0px 2px 0px;
+  }
+}
+
+.title1 {
+  font-family: var(--second-family);
+  font-weight: 900;
+  font-size: 76px;
+  line-height: 74%;
+  text-align: center;
+  color: #fff;
+  @media (max-width: 550px) {
+    text-align: left;
+  }
+  @media (max-width: 400px) {
+    font-size: 60px;
+  }
+}
+.title2 {
+  font-family: var(--second-family);
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 100%;
+  text-align: center;
+  color: #021051;
+  margin-bottom: 65px;
+  &.title-left {
+    text-align: left;
+    margin-bottom: 45px;
+    @media (max-width: 768px) {
+      margin-bottom: 30px;
+    }
+  }
+  span {
+    background: linear-gradient(360deg, #1255ca 0%, #1ba8eb 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  @media (max-width: 768px) {
+    font-size: 24px;
+    line-height: 100%;
+    text-align: left;
+    margin-bottom: 26px;
+  }
+}

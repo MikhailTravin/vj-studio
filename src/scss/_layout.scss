@@ -1,0 +1,93 @@
+.main-wrapper-outer {
+  width: 100%;
+  min-height: 100%;
+  max-width: var(--main-outer-width);
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  overflow: hidden;
+  &::before {
+    content: "";
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 97;
+    background: rgba(45, 57, 62, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .popup-show & {
+    &::before {
+      content: "";
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 105;
+    }
+  }
+  .menu-open & {
+    &::before {
+      content: "";
+      opacity: 1;
+      pointer-events: auto;
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+  }
+}
+
+.main {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+.main-bg {
+  position: relative;
+  padding-top: 90px;
+  background: #1b65cf;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 69px;
+    left: 15px;
+    width: calc(100% - 15px);
+    z-index: 10;
+    height: 786px;
+    background: linear-gradient(186.19deg, rgba(255, 255, 255, 0.06) 1.3%, rgba(255, 255, 255, 0.25) 23.09%);
+
+    /* маска из SVG — только форма */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='386'%20height='780'%20viewBox='0%200%20386%20780'%20preserveAspectRatio='none'%3E%3Cpath%20d='M0%2092.9295C0%2078.5531%2010.1988%2066.1976%2024.3148%2063.4731L350.315%200.553444C368.822%20-3.01859%20386%2011.1608%20386%2030.0098V779.666H0V92.9295Z'%20fill='black'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='386'%20height='780'%20viewBox='0%200%20386%20780'%20preserveAspectRatio='none'%3E%3Cpath%20d='M0%2092.9295C0%2078.5531%2010.1988%2066.1976%2024.3148%2063.4731L350.315%200.553444C368.822%20-3.01859%20386%2011.1608%20386%2030.0098V779.666H0V92.9295Z'%20fill='black'/%3E%3C/svg%3E");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+  // .main-bg__pic
+
+  &__pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--container-width);
+  padding: 0px 15px;
+}
