@@ -163,3 +163,117 @@ a {
     margin-bottom: 26px;
   }
 }
+
+.badges {
+  display: flex;
+
+  // .badges__badge
+
+  &__badge {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 114%;
+    color: #fff;
+    padding: 7px 24px;
+    flex: 0 1 164px;
+    margin-left: -14px;
+    @media (max-width: 992px) {
+      flex: 1 1 164px;
+    }
+    @media (max-width: 992px) {
+      padding: 7px 15px;
+      text-align: center;
+      justify-content: center;
+      min-width: 89px;
+    }
+    @media (min-width: 769px) {
+      @for $i from 1 through 20 {
+        &:nth-child(#{$i}) {
+          z-index: #{21 - $i};
+        }
+      }
+    }
+    &:nth-child(1) {
+      flex: 0 1 345px;
+      margin-left: 0;
+      padding: 7px 20px;
+      @media (max-width: 992px) {
+        flex: 1 1 345px;
+        min-width: 177px;
+        text-align: left;
+        justify-content: start;
+      }
+      @media (max-width: 400px) {
+        min-width: fit-content;
+      }
+    }
+    &:nth-child(2) {
+      flex: 0 1 216px;
+    }
+  }
+}
+
+.card-program {
+  flex: 0 0 175px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #fff;
+  border: 1px solid #1b87eb;
+  border-radius: 15px;
+  padding: 14px;
+  @media (max-width: 768px) {
+    flex: 0 0 148px;
+    gap: 12px;
+    padding: 10px;
+    border: 2px solid #1b87eb;
+  }
+  &.program-mini {
+    flex: 0 0 60px;
+    justify-content: center;
+    padding: 0px;
+    width: 60px;
+    height: 60px;
+    margin-right: -35px;
+    @media (max-width: 768px) {
+      flex: 0 0 50px;
+      width: 50px;
+      height: 50px;
+      margin-right: -25px;
+    }
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) {
+        z-index: #{21 - $i};
+      }
+    }
+  }
+  span {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 57%;
+    color: #000;
+  }
+
+  // .card-program__icon
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    @media (max-width: 768px) {
+      width: 25px;
+      height: 25px;
+    }
+    img {
+      height: auto;
+      width: auto;
+    }
+  }
+}

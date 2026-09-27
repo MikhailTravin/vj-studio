@@ -1,6 +1,11 @@
 .footer {
+    position: relative;
+    z-index: 5;
     background: linear-gradient(180deg, #f0f9ff 0%, #e4f2fb 100%);
     border-top: 1px solid #73c1fc;
+    @media (max-width: 550px) {
+        padding-bottom: 82px;
+    }
     // .footer__content
 
     &__content {
