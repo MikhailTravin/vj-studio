@@ -1330,7 +1330,7 @@ a {
 @media (max-width: 402px) {
   .block-intro__content {
     gap: 36px;
-    padding: 40% 0px 90px 0px;
+    padding: 150px 0px 90px 0px;
   }
 }
 .block-intro__top {
