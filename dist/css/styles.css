@@ -1330,7 +1330,7 @@ a {
 @media (max-width: 402px) {
   .block-intro__content {
     gap: 36px;
-    padding: 70% 0px 90px 0px;
+    padding: 50% 0px 90px 0px;
   }
 }
 .block-intro__top {
@@ -4974,9 +4974,7 @@ a {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  -webkit-box-shadow: 0 2px 15px 0 rgba(152, 152, 152, 0.35);
-          box-shadow: 0 2px 15px 0 rgba(152, 152, 152, 0.35);
-  background: rgba(255, 246, 251, 0.9);
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 55px;
   height: 65px;
   padding: 16px 30px 16px 30px;
