@@ -58,23 +58,26 @@ a {
   text-align: center;
   color: #fff;
   border: 1px solid #5aa1fd;
-  border-radius: 30px;
+  border-radius: 50px;
   min-height: 50px;
   width: fit-content;
   padding: 10px 23px;
   overflow: hidden;
   isolation: isolate;
   cursor: pointer;
-  border-radius: 50px;
   box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.15);
   background: linear-gradient(177.14deg, #38e6f2 3%, #489eff 98.25%);
-  background-size: 200% 200%;
-  background-position: 0% 0%;
   transition:
-    background-position 0.5s ease,
     transform 0.25s ease,
     box-shadow 0.35s ease,
     border-color 0.3s ease;
+  @media (max-width: 402px) {
+    font-size: 14px;
+    min-height: 42px;
+    padding: 8px 19px;
+    border-radius: 42px;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -89,13 +92,15 @@ a {
     pointer-events: none;
     z-index: 1;
   }
+
   span {
     position: relative;
     z-index: 2;
   }
+
   @media (any-hover: hover) {
     &:hover {
-      background-position: 100% 100%;
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2);
       &::before {
         left: 130%;
       }
@@ -119,6 +124,10 @@ a {
     margin-left: 25px;
     padding: 0px 0px 2px 0px;
   }
+  @media (max-width: 402px) {
+    font-size: 12px;
+    margin-left: 21px;
+  }
 }
 
 .title1 {
@@ -133,6 +142,9 @@ a {
   }
   @media (max-width: 400px) {
     font-size: 60px;
+  }
+  @media (max-width: 402px) {
+    font-size: 51px;
   }
 }
 .title2 {
@@ -149,6 +161,9 @@ a {
     @media (max-width: 768px) {
       margin-bottom: 30px;
     }
+    @media (max-width: 402px) {
+      margin-bottom: 26px;
+    }
   }
   span {
     background: linear-gradient(360deg, #1255ca 0%, #1ba8eb 100%);
@@ -161,6 +176,10 @@ a {
     line-height: 100%;
     text-align: left;
     margin-bottom: 26px;
+  }
+  @media (max-width: 402px) {
+    font-size: 20px;
+    margin-bottom: 22px;
   }
 }
 
@@ -191,6 +210,12 @@ a {
       justify-content: center;
       min-width: 89px;
     }
+    @media (max-width: 402px) {
+      font-size: 12px;
+      padding: 6px 13px;
+      min-width: 80px;
+      margin-left: -12px;
+    }
     @media (min-width: 769px) {
       @for $i from 1 through 20 {
         &:nth-child(#{$i}) {
@@ -207,6 +232,10 @@ a {
         min-width: 177px;
         text-align: left;
         justify-content: start;
+      }
+      @media (max-width: 402px) {
+        padding: 6px 17px;
+        min-width: 160px;
       }
       @media (max-width: 400px) {
         min-width: fit-content;
@@ -233,6 +262,12 @@ a {
     padding: 10px;
     border: 2px solid #1b87eb;
   }
+  @media (max-width: 402px) {
+    flex: 0 0 132px;
+    gap: 10px;
+    padding: 9px;
+    border-radius: 13px;
+  }
   &.program-mini {
     flex: 0 0 60px;
     justify-content: center;
@@ -246,6 +281,12 @@ a {
       height: 50px;
       margin-right: -25px;
     }
+    @media (max-width: 402px) {
+      flex: 0 0 43px;
+      width: 43px;
+      height: 43px;
+      margin-right: -21px;
+    }
     @for $i from 1 through 20 {
       &:nth-child(#{$i}) {
         z-index: #{21 - $i};
@@ -257,6 +298,10 @@ a {
     font-size: 14px;
     line-height: 57%;
     color: #000;
+    @media (max-width: 402px) {
+      font-size: 12px;
+      line-height: 114%;
+    }
   }
 
   // .card-program__icon
@@ -270,6 +315,10 @@ a {
     @media (max-width: 768px) {
       width: 25px;
       height: 25px;
+    }
+    @media (max-width: 402px) {
+      width: 22px;
+      height: 22px;
     }
     img {
       height: auto;

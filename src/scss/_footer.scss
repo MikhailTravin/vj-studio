@@ -23,6 +23,9 @@
             flex-direction: column-reverse;
             justify-content: start;
         }
+        @media (max-width: 402px) {
+            padding: 24px 5px;
+        }
     }
 
     // .footer__links
@@ -33,6 +36,9 @@
         gap: 15px 40px;
         @media (max-width: 550px) {
             flex-direction: column;
+        }
+        @media (max-width: 402px) {
+            gap: 12px 30px;
         }
         .link {
             margin: 0px 0px 0px 0px;
