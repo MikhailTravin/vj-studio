@@ -117,35 +117,10 @@
 }
 
 .icon-menu {
-    width: 25px;
-    cursor: pointer;
-    z-index: 5;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    @media (max-width: 402px) {
-        width: 22px;
-    }
-    // .icon-menu__line
-
-    &__line {
-        display: flex;
-        border-radius: 30px;
-        width: 20px;
-        margin-left: auto;
-        background-color: #fff;
-        height: 3px;
+    svg {
+        fill: #fff;
         @media (max-width: 550px) {
-            background-color: var(--021051);
-        }
-        @media (max-width: 402px) {
-            width: 18px;
-            height: 2.5px;
-        }
-        &:nth-child(even) {
-            margin-left: 0px;
-            margin-right: auto;
+            fill: #021051;
         }
     }
 }

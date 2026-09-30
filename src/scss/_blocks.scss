@@ -70,7 +70,7 @@
         }
         @media (max-width: 402px) {
             gap: 36px;
-            padding: 50% 0px 90px 0px;
+            padding: 150px 0px 90px 0px;
         }
     }
 
@@ -1230,11 +1230,8 @@
             margin-top: -25px;
         }
         @media (max-width: 402px) {
-            gap: 22px;
+            gap: 15px;
             margin-top: -15px;
-        }
-        @media (max-width: 400px) {
-            flex-direction: column;
         }
     }
 
@@ -1250,11 +1247,7 @@
             align-items: start;
         }
         @media (max-width: 402px) {
-            gap: 13px;
-        }
-        @media (max-width: 400px) {
-            flex-direction: row;
-            align-items: center;
+            gap: 5px;
         }
         p {
             font-weight: 600;
@@ -1267,7 +1260,12 @@
                 max-width: 105px;
             }
             @media (max-width: 402px) {
+                font-weight: 400;
                 font-size: 13px;
+            }
+            @media (max-width: 350px) {
+                font-size: 12px;
+                max-width: 90px;
             }
         }
     }
@@ -1298,6 +1296,9 @@
             margin-bottom: 0px;
             font-size: 44px;
             margin-top: -10px;
+        }
+        @media (max-width: 350px) {
+            font-size: 40px;
         }
     }
 
@@ -1346,9 +1347,6 @@
         }
         @media (max-width: 768px) {
             gap: 12px;
-        }
-        @media (max-width: 402px) {
-            gap: 10px;
         }
     }
 }
@@ -1562,10 +1560,6 @@
             max-width: calc(100% - 45px);
             gap: 13px;
         }
-        @media (max-width: 380px) {
-            max-width: calc(100% - 20px);
-            margin-left: 20px;
-        }
         img {
             width: 132px;
             height: auto;
@@ -1772,8 +1766,7 @@
 
     &__titles {
         display: flex;
-        flex-wrap: wrap;
-        align-items: center;
+        align-items: start;
         justify-content: space-between;
         gap: 20px 30px;
         .title1 {
@@ -1795,21 +1788,9 @@
     // .block-main-cases__tag
 
     &__tag {
-        font-family: var(--second-family);
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 95%;
-        text-align: center;
-        background: linear-gradient(180deg, #1aa1e8 0%, #306dd2 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        margin-top: 10px;
         @media (max-width: 768px) {
-            font-size: 28px;
-            line-height: 100%;
-        }
-        @media (max-width: 402px) {
-            font-size: 24px;
+            margin-top: 5px;
         }
     }
 
@@ -2135,6 +2116,246 @@
                 font-size: 13px;
             }
         }
+    }
+}
+
+.hashtag_block {
+    position: relative;
+}
+
+.hashtag_block .hash_circle {
+    display: none;
+}
+
+.hashtag_block .hashtag_pop {
+    position: absolute;
+    top: -13px;
+    right: -13px;
+    z-index: 100;
+    color: #fff;
+    background-color: #1b87eb;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    overflow: hidden;
+    display: none;
+}
+
+.hashtag_block .hashtag_pop.active {
+    display: block;
+}
+
+.hashtag_block .hashtag_pop * {
+    color: #fff;
+}
+
+.hashtag_block .hashtag_btn {
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    line-height: 1;
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 95%;
+    text-align: center;
+    background: linear-gradient(180deg, #1aa1e8 0%, #306dd2 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .hashtag_block .hashtag_btn {
+        font-size: 28px;
+        line-height: 100%;
+    }
+}
+
+@media (max-width: 402px) {
+    .hashtag_block .hashtag_btn {
+        font-size: 24px;
+    }
+}
+
+.hashtag_block .hashtag_pop .pop_content {
+    padding: 35px 30px;
+    padding-bottom: 15px;
+    width: 100%;
+    padding-right: 60px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+    will-change: opacity, transform;
+}
+
+.hashtag_block .hashtag_pop .pop_content.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hashtag_block .hashtag_pop .close_btn {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    line-height: 0;
+    position: absolute;
+    color: #fff;
+    font-size: 25px;
+    right: 15px;
+    top: 15px;
+    z-index: 20;
+}
+
+.hashtag_block .hashtag_pop .close_btn svg {
+    fill: #fff;
+    @media (max-width: 768px) {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.hashtag_block .hashtag_pop .hashtag_list {
+    position: relative;
+    z-index: 15;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    -webkit-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 23px;
+    column-gap: 23px;
+}
+
+.hashtag_block .hashtag_pop .hashtag_list li {
+    break-inside: avoid-column;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 10px;
+}
+
+.hashtag_block .hashtag_pop .hashtag_list a {
+    font-size: 1.125rem;
+    line-height: 1.2;
+    font-weight: 900;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #fff;
+}
+
+.hashtag_block .hashtag_pop .bg_name {
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 900;
+    position: absolute;
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    bottom: 61px;
+    right: -41px;
+}
+
+@media (max-width: 767px) {
+    .hashtag_block .hashtag_pop {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        z-index: 60;
+        border-radius: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .hashtag_block .hashtag_pop.active {
+        z-index: 10504;
+    }
+
+    .hashtag_block .hashtag_pop .hashtag_list {
+        -webkit-column-count: 1;
+        column-count: 1;
+    }
+
+    .hashtag_block .hashtag_pop .bg_name {
+        right: -30px;
+        position: fixed;
+        bottom: 26px;
+    }
+
+    .hashtag_block .hashtag_pop .hashtag_list a {
+        font-size: 1.2rem;
+        white-space: normal;
+    }
+
+    .hashtag_block .hashtag_pop .close_btn {
+        top: 184px;
+        right: 15px;
+    }
+
+    .hashtag_block .hashtag_pop .pop_content {
+        padding: 22px 15px;
+        padding-right: 45px;
+        padding-bottom: 15px;
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease;
+    }
+
+    /* === Круг-фон: центр в точке, которую задаёт JS (центр кнопки) === */
+    .hashtag_block .hash_circle {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vmax;
+        height: 100vmax;
+        margin-top: -50vmax;
+        margin-left: -50vmax;
+        border-radius: 100%;
+        background-color: #1b87eb;
+        z-index: 501;
+        display: block;
+        transform: scale(0);
+        transform-origin: center center;
+        -webkit-transition: -webkit-transform 0.9s ease;
+        -moz-transition: -moz-transform 0.9s ease;
+        -o-transition: -o-transform 0.9s ease;
+        transition: transform 0.9s ease;
+        pointer-events: none;
+        will-change: transform;
+    }
+
+    .hashtag_block .hashtag_btn.show {
+        z-index: 502;
+        position: relative;
+        color: #fff;
+    }
+
+    .hashtag_block .hash_circle.show {
+        transform: scale(2.5);
+        -webkit-transform: scale(2.5);
+        -moz-transform: scale(2.5);
+        -ms-transform: scale(2.5);
+        -o-transform: scale(2.5);
+    }
+
+    .header_nav .scroll .hashtag_block .hashtag_pop {
+        border-radius: 0;
+    }
+
+    .hashtag_block .hashtag_pop .hashtag_list li {
+        margin-bottom: 12px;
+    }
+
+    .hashtag_block .hashtag_pop .hashtag_list {
+        margin-bottom: 52px;
     }
 }
 
